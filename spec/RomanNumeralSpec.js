@@ -30,4 +30,8 @@ describe('Roman Numeral', function() {
   it('converts XXXIII to 33 ', function() {
     expect(romanNumeral.convert('XXXIII')).toEqual(33);
   });
+  
+  it('converts MCCCIX to 1309 ', function() {
+    expect(romanNumeral.convert('MCCCIX')).toEqual(1309);
+  });
 });
