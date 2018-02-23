@@ -1,7 +1,7 @@
 var RomanNumeral = function() {};
 
-RomanNumeral.prototype.convert = function(input) {
-  var map = {
+RomanNumeral.prototype.convert = function(numerals) {
+  var romanNumeralToNumericMap = {
     'I': 1,
     'V': 5,
     'X': 10,
@@ -10,7 +10,12 @@ RomanNumeral.prototype.convert = function(input) {
     'D': 500,
     'M': 1000
   };
-  return map[input];
+  var total = 0
+  for (i = 0; i < numerals.length; i++) {
+    var numeral = numerals[i];
+    total += romanNumeralToNumericMap[numeral];  
+  }
+  return total;
 };
 
 module.exports = RomanNumeral;
