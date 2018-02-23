@@ -10,10 +10,16 @@ RomanNumeral.prototype.convert = function(numerals) {
     'D': 500,
     'M': 1000
   };
-  var total = 0
+  var total = 0;
   for (i = 0; i < numerals.length; i++) {
     var numeral = numerals[i];
-    total += romanNumeralToNumericMap[numeral];  
+    var nextNumeral = numerals[i + 1];
+    if ( romanNumeralToNumericMap[numeral] < romanNumeralToNumericMap[nextNumeral]) {
+      total = total + romanNumeralToNumericMap[nextNumeral] - romanNumeralToNumericMap[numeral];
+      break;
+    } else {
+      total += romanNumeralToNumericMap[numeral];  
+    }
   }
   return total;
 };

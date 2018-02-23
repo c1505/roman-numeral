@@ -18,4 +18,16 @@ describe('Roman Numeral', function() {
   it('converts MM to 2000', function() {
     expect(romanNumeral.convert('MM')).toEqual(2000);
   });
+  
+  it('subtracks correctly.  converts IV to 4 ', function() {
+    expect(romanNumeral.convert('IV')).toEqual(4);
+  });
+  
+  it('subtracks correctly.  converts XIV to 14 ', function() {
+    expect(romanNumeral.convert('XIV')).toEqual(14);
+  });
+  
+  it('converts XXXIII to 33 ', function() {
+    expect(romanNumeral.convert('XXXIII')).toEqual(33);
+  });
 });
